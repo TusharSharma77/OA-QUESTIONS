@@ -1,14 +1,12 @@
-## description zscalar
-Given an integer array nums, you are allowed to remove elements in such a way  
-that after all removals the array becomes non-decreasing.
-
-Determine which elements must be removed.  
+## Problem
+Given an integer array `nums`, remove elements so that the final array becomes non-decreasing.  
 Return the removed elements in the order they are removed.
 
-(Non-decreasing means: nums[i] ≤ nums[i+1])
+---
 
+## Solution (Java)
 
-## code
+```java
 import java.util.*;
 
 public class Solution {
@@ -35,4 +33,3 @@ public class Solution {
         return removed;
     }
 }
-
