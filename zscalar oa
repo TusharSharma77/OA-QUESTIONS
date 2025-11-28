@@ -1,0 +1,38 @@
+## description zscalar
+Given an integer array nums, you are allowed to remove elements in such a way  
+that after all removals the array becomes non-decreasing.
+
+Determine which elements must be removed.  
+Return the removed elements in the order they are removed.
+
+(Non-decreasing means: nums[i] ≤ nums[i+1])
+
+
+## code
+import java.util.*;
+
+public class Solution {
+    public List<Integer> removedElements(int[] nums) {
+        List<Integer> toRemove = new ArrayList<>();
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
+                toRemove.add(nums[i - 1]);
+                toRemove.add(nums[i]);
+            }
+        }
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>(toRemove);
+
+        List<Integer> removed = new ArrayList<>();
+        int i = 0;
+        while (!pq.isEmpty() && i < nums.length) {
+            if (nums[i].equals(pq.peek())) {
+                removed.add(nums[i]);
+                pq.poll();
+            }
+            i++;
+        }
+        return removed;
+    }
+}
+
