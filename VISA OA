@@ -1,0 +1,40 @@
+Q) .You are given a array of heights of hills
+a hiker can see the hills ahead of him after a certain gap distance x
+i.e if x = 2,
+He can see the hills ahead of him after 2 indexes
+like if on i = 1 then he can see from 3 , 4, ...n;
+We need to find the minimum gap he can see from any hill
+Ex:
+heights = [ 2, 4 , 9, 10], gap = 2
+ans:
+at i = 0
+he can see i = 2 and i =3
+minimum differance = 7
+at i = 1
+minimum differance = 6
+from 2 nd 3 no hill is visible
+So final answer is 6
+
+
+CODE :
+class Solution {
+    public int minimumVisibleGap(int[] heights, int gap) {
+        int n = heights.length;
+        TreeSet<Integer> set = new TreeSet<>();
+        int ans = Integer.MAX_VALUE;
+
+        for (int i = n - 1; i >= 0; i--) {
+            int j = i + gap;
+            if (j < n) {
+                set.add(heights[j]);
+            }
+            if (set.isEmpty()) continue;
+            int h = heights[i];
+            Integer floor = set.floor(h); 
+            Integer ceil  = set.ceiling(h); 
+            if (floor != null) ans = Math.min(ans, Math.abs(h - floor));
+            if (ceil != null) ans = Math.min(ans, Math.abs(h - ceil));
+        }
+        return ans;
+    }
+}
