@@ -1,0 +1,42 @@
+Problem Description
+Alex and Jordan are coding friends. Jordan decides to practice more since Alex is initially ahead. They each complete a certain number of problems daily. Your task is to find the minimum number of days required for Jordan to solve more problems than Alex. If Jordan can never surpass Alex, return -1.
+
+Function Description:
+
+Complete the function minNum(int alexDaily, int jordanDaily, int gap)
+
+Parameters:
+
+alexDaily: The number of problems Alex solves each day.
+jordanDaily: The number of problems Jordan solves each day.
+gap: The initial number of problems by which Alex is ahead.
+Output:
+Return the minimum number of days needed for Jordan to surpass Alex. If it's impossible for Jordan to catch up, return -1.
+
+Example:
+
+Input:
+
+alexDaily = 3
+jordanDaily = 5
+gap = 5
+Output:
+
+3
+Explanation:
+
+Alex Daily: 3
+Jordan Daily: 5
+Initial Gap: 5
+At the start, Alex has solved 5 more problems than Jordan. Each day, they solve alexDaily and jordanDaily problems respectively.
+
+Day 1:
+Alex’s total problems: gap + alexDaily = 5 + 3 = 8
+Jordan’s total problems: jordanDaily = 5
+Day 2:
+Alex’s total problems: 8 + 3 = 11
+Jordan’s total problems: 5 + 5 = 10
+Day 3:
+Alex’s total problems: 11 + 3 = 14
+Jordan’s total problems: 10 + 5 = 15
+Since Alex starts with a 5-problem lead and they solve 3 and 5 problems daily, respectively, Alex’s lead reduces to 3 after Day 1, 1 after Day 2, and on Day 3, Jordan surpasses Alex.
