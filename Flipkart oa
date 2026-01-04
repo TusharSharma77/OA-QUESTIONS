@@ -40,3 +40,66 @@ Day 3:
 Alex’s total problems: 11 + 3 = 14
 Jordan’s total problems: 10 + 5 = 15
 Since Alex starts with a 5-problem lead and they solve 3 and 5 problems daily, respectively, Alex’s lead reduces to 3 after Day 1, 1 after Day 2, and on Day 3, Jordan surpasses Alex.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////   QUESTION 2  /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Problem Description
+A schedule for an upcoming tech conference has been released, listing the start and end times of each session. Once a session begins, attendees cannot enter or leave the room. Moving between sessions takes no time.
+
+The task is to determine the maximum number of sessions a single attendee can attend.
+
+Input Format:
+The first line contains an integer n, the number of presentations.
+The second line contains n space-separated integers representing the start times of the presentations.
+The third line contains n space-separated integers representing the end times of the presentations.
+Output Format:
+Print a single integer representing the maximum number of presentations that one person can attend.
+Constraints:
+1 <= n <= 10^5
+1 <= scheduleStart[i], scheduleEnd[i] <= 10^9
+Example:
+Input:
+
+3
+1 1 2
+3 2 4
+Output:
+
+2
+Explanation:
+
+Using 0-based indexing:
+
+An attendee can attend presentation 1 (starting at 1, ending at 2) and presentation 2 (starting at 2, ending at 4).
+Presentation 0 (starting at 1, ending at 3) overlaps with presentation 1 and 2, so it cannot be attended along with any other presentation.
+Thus, the maximum number of presentations that can be attended is 2.
